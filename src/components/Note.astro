@@ -1,0 +1,11 @@
+---
+export interface Props {
+	type: 'caution' | 'note';
+}
+
+const { type } = Astro.props;
+---
+
+<aside class="width-full border l-4 m-5 p-3 bg-blue-200 border-blue-400 text-blue-600 dark:bg-blue-400 dark:border-blue-600 dark:text-blue-800">
+	<slot />
+</aside>

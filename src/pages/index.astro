@@ -1,0 +1,30 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+interface MarkdownFrontmatter {
+  publishDate: number;
+}
+
+let allPosts = await Astro.fetchContent('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+
+---
+<html lang="en">
+  <head>
+    <BaseHead />
+    <link rel="stylesheet" href={Astro.resolve('../styles/blog.css')} />
+  </head>
+
+  <body>
+      <main class="content">
+        <section class="intro">
+          <h1 class="text-2xl">Making an OS in Zig</h1>
+        </section>
+        <section aria-label="Blog post list">
+          {allPosts.map(p => <BlogPostPreview post={p} />)}
+        </section>
+      </main>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* code[class*="language-"], */
+pre[class*="language-"] {
+  @apply rounded-md my-2;
+}
+
+body {
+  @apply px-20 pt-3 dark:bg-gray-700 dark:text-white;
+}
+
+li > a {
+  @apply underline;
+}
+
+ul {
+  @apply mx-5 list-disc
+}
