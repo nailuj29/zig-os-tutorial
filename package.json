@@ -12,6 +12,7 @@
     "@astrojs/renderer-preact": "^0.3.0",
     "astro": "^0.21.4",
     "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
     "tailwindcss": "^2.2.19"
   }
 }
